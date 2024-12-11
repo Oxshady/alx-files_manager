@@ -10,7 +10,6 @@ const TOKEN_PATH = 'token.json';
 const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);
 
-
 async function getNewToken(oAuth2Client, callback) {
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: 'offline',
@@ -39,7 +38,6 @@ async function getNewToken(oAuth2Client, callback) {
   });
 }
 
-
 async function authorize(credentials, callback) {
   const clientSecret = credentials.web.client_secret;
   const clientId = credentials.web.client_id;
@@ -58,7 +56,6 @@ async function authorize(credentials, callback) {
   console.log('Client authorization done');
 }
 
-
 function sendMailService(auth, mail) {
   const gmail = google.gmail({ version: 'v1', auth });
 
@@ -73,7 +70,6 @@ function sendMailService(auth, mail) {
     console.log('Message sent successfully');
   });
 }
-
 
 export default class Mailer {
   static checkAuth() {

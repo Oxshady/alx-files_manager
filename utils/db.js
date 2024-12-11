@@ -19,11 +19,9 @@ class DBClient {
     return this.client.isConnected();
   }
 
-
   async nbUsers() {
     return this.client.db().collection('users').countDocuments();
   }
-
 
   async nbFiles() {
     return this.client.db().collection('files').countDocuments();
@@ -32,7 +30,6 @@ class DBClient {
   async usersCollection() {
     return this.client.db().collection('users');
   }
-
 
   async filesCollection() {
     return this.client.db().collection('files');
